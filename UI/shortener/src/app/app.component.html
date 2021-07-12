@@ -1,0 +1,31 @@
+<body class="d-flex flex-column min-vh-100">
+<header>
+  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse" title="This Header is rendered by /app/_layout/site-header/site-header.component.html" style="position: unset; background-color: black;">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Url Shortener App</a>
+  
+    <div class="navbar-collapse" id="navbarsExampleDefault" style="flex-basis: inherit;">
+      <ul class="navbar-nav mr-auto" style="flex-direction: initial;">
+        <li class="nav-item" style="padding: 0px 20px 0px 30px;">
+          <a class="nav-link" routerLink="/shortener" style="color: white;"> Dashboard </a>
+        </li>
+        <li class="nav-item" style="padding: 0px 20px 0px 30px;">
+          <a class="nav-link" routerLink="/add" style="color: white;">Add / Update </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="wrapper flex-grow-1 container" style="background-color: whitesmoke;">
+  <h2 style="padding: 20px; background-color: yellowgreen; text-align: center;"><strong>Welcome to Shortened Url Generator</strong> </h2>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="container">
+  <footer>
+    <p>&copy; Company 2021 , Prime Solutions - Hyderabad </p>
+  </footer>
+</div>
+</body>

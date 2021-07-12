@@ -1,0 +1,36 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<div class="content" style="padding-top: 35px;" *ngIf="urlsList.length > 0; else showButton">
+    <span style="display: flex;">
+        <p><strong> Generated Short Url Table :  </strong>  </p> 
+        <button class="btn btn-primary addButton" (click)="redirectToAddPage()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </span>
+    <table class="table table-striped" style="padding: 5%;">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Actual Url</th>
+          <th scope="col">Short Url</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Expired Date</th>
+          <th scope="col">Update/Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let url of urlsList; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td> {{ url.longUrl }}</td>
+          <td><a href="javascript:void(0)" (click)="redirectToActualUrl(url)">{{ 'url/' + url.shortUrl }} </a> </td>
+          <td>{{ url.createdDate | date }}</td>
+          <td>{{ url.expiredDate | date }}</td>
+          <td style="padding-left: 3%;">  <a href="javascript:void(0)" (click)="editUrl(url)"><i class="fa fa-edit"></i> </a>
+             / <a href="javascript:void(0)" (click)="deleteUrl(url)"><i class="fa fa-trash"></i> </a> </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #showButton>
+    <div class="content generateUrlButton">
+        <button class="btn btn-success" (click)="redirectToAddPage()"> Generate New Shortened Url </button> 
+     </div>
+</ng-template>
